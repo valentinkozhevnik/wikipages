@@ -1,0 +1,10 @@
+django==1.8.0
+Werkzeug==0.9.6
+argparse==1.2.2
+dateutils==0.6.6
+django-extensions==1.7.1
+
+djangorestframework==3.0.5
+ipython==2.3.0
+psycopg2==2.5.4
+pytz==2014.10
