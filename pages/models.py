@@ -19,3 +19,7 @@ class PagesVersionStorage(models.Model):
     class Meta:
         db_table = 'pages_version_storage'
         app_label = _app_label
+
+    @property
+    def is_current(self):
+        return self.page.version_id == self.id
