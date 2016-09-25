@@ -51,6 +51,13 @@ class PagesViewSet(ModelViewSet):
         serializer = PagesVersionListSerializer(instance=version, many=False)
         return Response({'result': serializer.data})
 
+    @detail_route(methods=['get'], url_path=r'version/current')
+    def version_current(self, request, pk, *args, **kwargs):
+        instance = self.get_object()
+        version = instance.version
+        serializer = PagesVersionListSerializer(instance=version, many=False)
+        return Response({'result': serializer.data})
+
     @many_lockup_route(methods=['post'],
                        url_path='version-set-current',
                        extra_url=r'version/(?P<version_id>\d+)/set_current')
